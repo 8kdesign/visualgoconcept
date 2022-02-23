@@ -10,18 +10,49 @@ import {
 	PauseFill,
 } from "react-bootstrap-icons";
 
-export default function Controls({ positionCount, position, setPosition }) {
+export default function Controls({
+	positionCount,
+	position,
+	setPosition,
+	actions,
+}) {
 	const [speed, setSpeed] = useState(5);
 	const [isPlaying, setPlaying] = useState(false);
+	const [showActions, setShowActions] = useState(false);
 
 	return (
 		<div className="Container--controls">
 			<div
-				className="Toggle--selector"
-				style={{ flex: 0, paddingLeft: 50, paddingRight: 50 }}
+				className="Dropdown--section_selector"
+				style={{
+					flex: 0,
+					width: 200,
+				}}
 			>
-				<ChevronUp color="white" />
+				<div
+					className="Dropdown_content--section_selector"
+					style={
+						showActions
+							? {
+									display: "block",
+									bottom: "100%",
+							  }
+							: { display: "none" }
+					}
+				>
+					<Actions actions={actions} />
+				</div>
+				<div
+					className="Toggle--selector"
+					style={{ width: 200 }}
+					onClick={() => {
+						setShowActions(!showActions);
+					}}
+				>
+					<ChevronUp color="white" />
+				</div>
 			</div>
+
 			<div
 				style={{
 					height: 39.5,
@@ -92,4 +123,26 @@ export default function Controls({ positionCount, position, setPosition }) {
 			</div>
 		</div>
 	);
+}
+
+function Actions({ actions }) {
+	const itemArray = [];
+	for (let i = 0; i < actions.length; i++) {
+		itemArray.push(
+			<div
+				className="Toggle--selector"
+				style={{
+					justifyContent: "start",
+					paddingLeft: 20,
+					paddingRight: 20,
+				}}
+				key={i}
+			>
+				<p className="Text--section_selector Text--nonselectable">
+					{actions[i]}
+				</p>
+			</div>
+		);
+	}
+	return itemArray;
 }

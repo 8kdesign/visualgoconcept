@@ -2,6 +2,7 @@ import Head from "next/head";
 import { useEffect, useState } from "react";
 import { Col, Row } from "react-bootstrap";
 import Controls from "../../components/Controls";
+import Lecture from "../../components/Lecture";
 import Menu from "../../components/Menu";
 import SectionSelector from "../../components/SectionSelector";
 import Steps from "../../components/Steps";
@@ -60,6 +61,7 @@ export default function Sorting() {
 						positionCount={50}
 						position={animationPosition}
 						setPosition={setAnimationPosition}
+						actions={demoActions}
 					/>
 					<Steps
 						screenHeight={screenHeight}
@@ -84,21 +86,7 @@ export default function Sorting() {
 						section={sectionIndex}
 						content={content}
 					/>
-					<div
-						style={{
-							padding: 50,
-							overflowY: "scroll",
-							height: "calc(100% - 39.5px)",
-						}}
-					>
-						<p className="Text--header">
-							{getContent(sectionIndex).title}
-						</p>
-						<div className="Buffer--20px" />
-						<p className="Text--content">
-							{getContent(sectionIndex).content}
-						</p>
-					</div>
+					<Lecture content={getContent(sectionIndex)} />
 				</Col>
 			</Row>
 		</>
@@ -176,3 +164,5 @@ const demoStep = {
 	],
 	active: [1, 2],
 };
+
+const demoActions = ["Create(A)", "Sort"];
