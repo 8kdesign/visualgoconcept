@@ -1,12 +1,7 @@
 import { useState } from "react";
 import { ChevronDown, ChevronUp } from "react-bootstrap-icons";
 
-export default function Steps({
-	screenHeight,
-	instruction,
-	code,
-	activeLines,
-}) {
+export default function Steps({ instruction, code, activeLines }) {
 	const [isStepsCollapsed, setStepsCollapsed] = useState(false);
 	if (isStepsCollapsed) {
 		return (

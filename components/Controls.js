@@ -36,6 +36,8 @@ export default function Controls({
 							? {
 									display: "block",
 									bottom: "100%",
+									maxHeight: null,
+									overflow: "visible",
 							  }
 							: { display: "none" }
 					}
