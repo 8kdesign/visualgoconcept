@@ -1,6 +1,7 @@
 import Head from "next/head";
 import { useEffect, useState } from "react";
 import { Col, Row } from "react-bootstrap";
+import Controls from "../../components/Controls";
 import Menu from "../../components/Menu";
 import SectionSelector from "../../components/SectionSelector";
 import Steps from "../../components/Steps";
@@ -9,6 +10,7 @@ export default function Sorting() {
 	const [screenHeight, setScreenHeight] = useState(0);
 	const [selectedIndex, setSelectedIndex] = useState(0);
 	const [sectionIndex, setSectionIndex] = useState(0);
+	const [animationPosition, setAnimationPosition] = useState(0);
 
 	useEffect(() => {
 		if (typeof window === "undefined") return;
@@ -54,6 +56,11 @@ export default function Sorting() {
 						setSelectedIndex={setSelectedIndex}
 					/>
 					<div style={{ flex: 1 }}></div>
+					<Controls
+						positionCount={50}
+						position={animationPosition}
+						setPosition={setAnimationPosition}
+					/>
 					<Steps
 						screenHeight={screenHeight}
 						instruction={demoStep.instruction}
@@ -157,7 +164,7 @@ const content = [
 
 const demoStep = {
 	instruction:
-		"Set the swapped flag to false.\nThen iterate from index 1 to 14 inclusive.",
+		"Set the swapped flag to false. Then iterate from index 1 to 14 inclusive.",
 	code: [
 		"do",
 		"  swapped = false",

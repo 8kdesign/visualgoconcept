@@ -96,19 +96,6 @@ a {
 	background-color: rgb(50, 50, 50);
 }
 
-.Toggle--section_selector {
-	cursor: pointer;
-	height: 39.5px;
-	display: flex;
-	align-items: center;
-	justify-content: center;
-	flex: 1;
-}
-
-.Toggle--section_selector:hover {
-	background-color: #212121;
-}
-
 .Dropdown--section_selector {
 	position: relative;
 	display: inline-block;
@@ -133,6 +120,29 @@ a {
 	text-overflow: ellipsis;
 	word-break: break-all;
 	overflow: hidden;
+}
+
+.Container--controls {
+	width: 100%;
+	height: auto;
+	display: flex;
+	flex-direction: row;
+	overflow: visible;
+	flex-wrap: wrap;
+	background-color: rgb(50, 50, 50);
+}
+
+.Toggle--selector {
+	cursor: pointer;
+	height: 39.5px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	flex: 1;
+}
+
+.Toggle--selector:hover {
+	background-color: #212121;
 }
 
 .Text--header {
@@ -163,4 +173,57 @@ a {
 	-moz-user-select: none;
 	-ms-user-select: none;
 	user-select: none;
+}
+
+.Slider {
+	margin-left: 10px;
+	margin-right: 10px;
+	width: 80px;
+	outline: none;
+	-webkit-appearance: none;
+	border-radius: 10px;
+	outline: none;
+	opacity: 0.7;
+	cursor: pointer;
+}
+
+.Slider::-webkit-slider-runnable-track {
+	background: #5c5c5c;
+	border-radius: 5px;
+}
+
+.Slider::-webkit-slider-thumb {
+	-webkit-appearance: none;
+	appearance: none;
+	width: 10px;
+	height: 10px;
+	border-radius: 5px;
+	background: #a8a8a8;
+}
+
+.Slider2 {
+	margin-left: 10px;
+	margin-right: 10px;
+	width: 80px;
+	outline: none;
+	-webkit-appearance: none;
+	appearance: none;
+	border-radius: 10px;
+	outline: none;
+	opacity: 0.7;
+	cursor: pointer;
+}
+
+.Slider2::-webkit-slider-runnable-track {
+	background: #5c5c5c;
+	border-radius: 5px;
+}
+
+.Slider2::-webkit-slider-thumb {
+	-webkit-appearance: none;
+	appearance: none;
+	width: 10px;
+	height: 10px;
+	border-radius: 5px;
+	background: white;
 }

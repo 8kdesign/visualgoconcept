@@ -19,7 +19,7 @@ export default function SectionSelector({ content, section, setSection }) {
 	return (
 		<div className="Container--section_selector">
 			<div
-				className="Toggle--section_selector"
+				className="Toggle--selector"
 				style={{ padding: 20, flex: 0 }}
 				onClick={decrease}
 			>
@@ -27,7 +27,7 @@ export default function SectionSelector({ content, section, setSection }) {
 			</div>
 			<div className="Dropdown--section_selector">
 				<div
-					className="Toggle--section_selector"
+					className="Toggle--selector"
 					onClick={() => {
 						setShowDropdown(!showDropdown);
 					}}
@@ -55,7 +55,7 @@ export default function SectionSelector({ content, section, setSection }) {
 			</div>
 
 			<div
-				className="Toggle--section_selector"
+				className="Toggle--selector"
 				style={{ padding: 20, flex: 0 }}
 				onClick={increase}
 			>
@@ -71,15 +71,15 @@ function SectionDropDown({ content, setShowDropdown, setSection }) {
 	const itemArray = [];
 	for (let i = 0; i < content.length; i++) {
 		const section = getContent(content, i);
-		console.log(section.title);
 		itemArray.push(
 			<div
-				className="Toggle--section_selector"
+				className="Toggle--selector"
 				style={{
 					justifyContent: "start",
 					paddingLeft: 20,
 					paddingRight: 20,
 				}}
+				key={i}
 				onClick={() => {
 					setShowDropdown(false);
 					setSection(i);

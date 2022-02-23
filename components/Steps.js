@@ -14,7 +14,7 @@ export default function Steps({
 				style={{
 					height: 25,
 					width: "100%",
-					backgroundColor: "#CCCCCC",
+					backgroundColor: "#f0f0f0",
 					display: "flex",
 					alignItems: "center",
 					justifyContent: "center",
@@ -24,7 +24,7 @@ export default function Steps({
 					setStepsCollapsed(false);
 				}}
 			>
-				<ChevronUp width={20} height={20} color="white" />
+				<ChevronUp width={20} height={20} color="black" />
 			</div>
 		);
 	} else {
@@ -40,7 +40,7 @@ export default function Steps({
 				<div
 					style={{
 						height: 25,
-						backgroundColor: "#CCCCCC",
+						backgroundColor: "#f0f0f0",
 						display: "flex",
 						alignItems: "center",
 						justifyContent: "center",
@@ -50,7 +50,7 @@ export default function Steps({
 						setStepsCollapsed(true);
 					}}
 				>
-					<ChevronDown width={20} height={20} color="white" />
+					<ChevronDown width={20} height={20} color="black" />
 				</div>
 				<div style={{ padding: 20, overflowY: "scroll", height: 275 }}>
 					<p className="Text--content">{instruction}</p>
@@ -68,7 +68,7 @@ function Code({ code, activeLines }) {
 		const line = code[i];
 		itemArray.push(
 			<div
-				key={line}
+				key={i}
 				style={
 					activeLines.find((value) => value === i) !== undefined
 						? { backgroundColor: "#212121", color: "white" }
