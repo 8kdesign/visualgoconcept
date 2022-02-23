@@ -29,15 +29,7 @@ export default function Steps({
 		);
 	} else {
 		return (
-			<div
-				style={{
-					height: screenHeight,
-					maxHeight: 300,
-					width: "100%",
-					backgroundColor: "#fafafa",
-					overflowY: "scroll",
-				}}
-			>
+			<>
 				<div
 					style={{
 						height: 25,
@@ -53,12 +45,19 @@ export default function Steps({
 				>
 					<ChevronDown width={20} height={20} color="black" />
 				</div>
-				<div style={{ padding: 20 }}>
+				<div
+					style={{
+						padding: 20,
+						overflowY: "scroll",
+						height: 275,
+						backgroundColor: "#fafafa",
+					}}
+				>
 					<p className="Text--content">{instruction}</p>
 					<div className="Buffer--20px" />
 					<Code code={code} activeLines={activeLines} />
 				</div>
-			</div>
+			</>
 		);
 	}
 }
