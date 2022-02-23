@@ -139,6 +139,7 @@ a {
 	align-items: center;
 	justify-content: center;
 	flex: 1;
+	background-color: rgb(50, 50, 50);
 }
 
 .Toggle--selector:hover {

@@ -87,6 +87,28 @@ export default function Sorting() {
 						content={content}
 					/>
 					<Lecture content={getContent(sectionIndex)} />
+					<Row style={{ height: 50, width: "100%", margin: 0 }}>
+						<Col xs={6} style={{ display: "flex", padding: 5 }}>
+							<div className="Toggle--selector">
+								<p
+									style={{ color: "white", margin: 0 }}
+									className="Text--nonselectable"
+								>
+									Print
+								</p>
+							</div>
+						</Col>
+						<Col xs={6} style={{ display: "flex", padding: 5 }}>
+							<div className="Toggle--selector">
+								<p
+									style={{ color: "white", margin: 0 }}
+									className="Text--nonselectable"
+								>
+									Quiz
+								</p>
+							</div>
+						</Col>
+					</Row>
 				</Col>
 			</Row>
 		</>
