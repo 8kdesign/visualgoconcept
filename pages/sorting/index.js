@@ -39,7 +39,7 @@ export default function Sorting() {
 					xs={12}
 					sm={12}
 					md={12}
-					lg={6}
+					lg={8}
 					style={{
 						height: screenHeight,
 						backgroundColor: "#ebfaff",
@@ -54,13 +54,18 @@ export default function Sorting() {
 						setSelectedIndex={setSelectedIndex}
 					/>
 					<div style={{ flex: 1 }}></div>
-					<Steps screenHeight={screenHeight} />
+					<Steps
+						screenHeight={screenHeight}
+						instruction={demoStep.instruction}
+						code={demoStep.code}
+						activeLines={demoStep.active}
+					/>
 				</Col>
 				<Col
 					xs={12}
 					sm={12}
 					md={12}
-					lg={6}
+					lg={4}
 					style={{
 						height: screenHeight,
 						backgroundColor: "#ebebeb",
@@ -68,10 +73,9 @@ export default function Sorting() {
 					}}
 				>
 					<SectionSelector
-						count={content.length}
 						setSection={setSectionIndex}
 						section={sectionIndex}
-						title={getContent(sectionIndex).title}
+						content={content}
 					/>
 					<div
 						style={{
@@ -80,10 +84,11 @@ export default function Sorting() {
 							height: "calc(100% - 39.5px)",
 						}}
 					>
-						<p className="Text--section-header">
+						<p className="Text--header">
 							{getContent(sectionIndex).title}
 						</p>
-						<p className="Text--section-content">
+						<div className="Buffer--20px" />
+						<p className="Text--content">
 							{getContent(sectionIndex).content}
 						</p>
 					</div>
@@ -94,7 +99,11 @@ export default function Sorting() {
 }
 
 function getContent(position) {
-	if (position < 0 || position >= content.length) return;
+	if (position < 0 || position >= content.length)
+		return {
+			title: "",
+			content: "",
+		};
 	return content[position];
 }
 
@@ -145,3 +154,18 @@ const content = [
 			"Sorting problem has a variety of interesting algorithmic solutions that embody many Computer Science ideas:\n\n1. Comparison versus non-comparison based strategies,\n\n2. Iterative versus Recursive implementation,\n\n3. Iterative versus Recursive implementation,\n\n4. Iterative versus Recursive implementation,\n\n5. Iterative versus Recursive implementation,\n\n\n\nPro-tip 1: Since you are not logged-in, you may be a first time visitor (or not an NUS student) who are not aware of the following keyboard shortcuts to navigate this e-Lecture mode: [PageDown]/[PageUp] to go to the next/previous slide, respectively, (and if the drop-down box is highlighted, you can also use [→ or ↓/← or ↑] to do the same),and [Esc] to toggle between this e-Lecture mode and exploration mode.",
 	},
 ];
+
+const demoStep = {
+	instruction:
+		"Set the swapped flag to false.\nThen iterate from index 1 to 14 inclusive.",
+	code: [
+		"do",
+		"  swapped = false",
+		"  for i = 1 to indexOfLastUnsortedElement-1",
+		"  for i = 1 to indexOfLastUnsortedElement-1",
+		"      swap(leftElement, rightElement)",
+		"      swapped = true; ++swapCounter",
+		"while swapped",
+	],
+	active: [1, 2],
+};

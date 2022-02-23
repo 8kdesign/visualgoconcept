@@ -5,7 +5,7 @@ export default function Menu({ menu, selectedIndex, setSelectedIndex }) {
 			itemArray.push(
 				<p
 					style={{ color: "white", fontWeight: 700 }}
-					className="Text--menu"
+					className="Text--menu Text--nonselectable"
 					key={menu[i].shortName}
 				>
 					{menu[i].name}
@@ -15,7 +15,7 @@ export default function Menu({ menu, selectedIndex, setSelectedIndex }) {
 			itemArray.push(
 				<p
 					style={{ color: "grey" }}
-					className="Text--menu"
+					className="Text--menu Text--nonselectable"
 					key={menu[i].shortName}
 					onClick={() => {
 						setSelectedIndex(i);

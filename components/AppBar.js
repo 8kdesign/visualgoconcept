@@ -16,6 +16,7 @@ export default function AppBar() {
 		>
 			<Link href="/">
 				<p
+					className="Text--nonselectable"
 					style={{
 						color: "white",
 						margin: 0,
